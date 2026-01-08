@@ -23,30 +23,31 @@
             margin-bottom: 10px;
             position: relative;
         }
-        /* Pop-up menu styling */
+        /* Simple pop-up styling */
         .email-popup {
             display: none;
             position: absolute;
             top: 25px;
             left: 0;
-            background: #f9f9f9;
+            background: #f0f0f0;
             border: 1px solid #ccc;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            padding: 10px;
+            border-radius: 5px;
+            padding: 8px;
             z-index: 100;
-            width: 180px;
+            width: 160px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .email-popup button {
             display: block;
             width: 100%;
-            margin: 5px 0;
-            padding: 5px;
+            margin: 4px 0;
+            padding: 6px;
             background-color: #0066cc;
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
         }
         .email-popup button:hover {
             background-color: #004999;
@@ -98,7 +99,7 @@
     smartsoilddg2025@gmail.com
   </span>
   
-  <!-- Pop-up menu -->
+  <!-- Inline pop-up menu -->
   <div class="email-popup">
       <button onclick="sendEmail('smartsoilddg2025@gmail.com')">Send Email</button>
       <button onclick="copyEmail('smartsoilddg2025@gmail.com')">Copy Email</button>
@@ -111,19 +112,20 @@ function togglePopup(element) {
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
 }
 
-// Send email function
 function sendEmail(email) {
     window.location.href = `mailto:${email}`;
 }
 
-// Copy email function
 function copyEmail(email) {
     navigator.clipboard.writeText(email)
-        .then(() => alert('Email copied to clipboard!'))
-        .catch(() => alert('Failed to copy email.'));
+        .then(() => {
+            const popup = event.target.parentElement;
+            popup.innerHTML = '<div style="padding:6px; text-align:center;">Copied!</div>';
+            setTimeout(() => popup.style.display = 'none', 1000);
+        });
 }
 
-// Close popup if clicked outside
+// Close pop-up if clicked outside
 document.addEventListener('click', function(event) {
     const popups = document.querySelectorAll('.email-popup');
     popups.forEach(popup => {
@@ -136,9 +138,3 @@ document.addEventListener('click', function(event) {
 
 </body>
 </html>
-
-
-
-
-
-
