@@ -2,85 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SoilBit User Guide</title>
+    <title>🛠️ SoilBit Admin Guide</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: justify;
             line-height: 1.6;
+            margin: 20px;
         }
         h1 {
             text-align: center;
         }
         h2 {
-            margin-top: 1.5em;
+            margin-top: 30px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 40px;
         }
         .clickable-link {
             color: #0066cc;
             text-decoration: underline;
             font-weight: bold;
-            cursor: pointer; /* shows pointer on hover */
+            cursor: pointer; /* make it look clickable */
         }
         .aligned-text {
-            margin-left: 20px; /* aligns with bullet points */
+            margin-left: 40px; /* align with bullets */
             margin-bottom: 0.5em;
+        }
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
 
-<h1>🌱 SoilBit User Guide</h1>
+<h1>🛠️ SoilBit Admin Guide</h1>
 
 <h2>1. 🚀 Getting Started</h2>
 <ul>
-    <li>Install SoilBit on your device.</li>
-    <li>Log in or register a new account.</li>
-    <li>Scan the gateway QR code or enter the gateway ID.</li>
+    <li>Install SoilBit.</li>
+    <li>Log in or register an account.</li>
+    <li>Connect your farm profile by scanning the device QR code or entering the gateway ID.</li>
+    <li>If you are an admin, you will be directed automatically to the Admin Dashboard.</li>
 </ul>
 
 <hr>
 
-<h2>2. 📊 Dashboard Overview</h2>
+<h2>2. 🌾 Farm Management</h2>
 <ul>
-    <li>View soil conditions per zone.</li>
-    <li>Tap map markers to see detailed parameters.</li>
-    <li>Monitor moisture, pH, temperature, salinity, and NPK.</li>
+    <li>Farm Name Button – select a farm to manage.</li>
+    <li>View metadata for each farm (farm profile, location, assigned sensors).</li>
+    <li>Note: Admins cannot access the soil data from the farm; only overview information is available.</li>
 </ul>
 
 <hr>
 
-<h2>3. 📝 Reports</h2>
+<h2>3. 👤 User Profiling</h2>
 <ul>
-    <li>Generate daily and monthly summaries.</li>
-    <li>Export reports as PDF via System Log.</li>
+    <li>Add Users – create new user accounts.</li>
+    <li>Delete Users – remove inactive or unnecessary accounts.</li>
+    <li>Assign roles or permissions to control user access levels.</li>
 </ul>
 
 <hr>
 
-<h2>4. 💬 Support</h2>
+<h2>4. 🧭 Sensor Profiling</h2>
+<ul>
+    <li>Add Sensors – include new sensors for farm expansion.</li>
+    <li>Delete Sensors – remove faulty or obsolete sensors.</li>
+    <li>Assign sensors to specific farms for proper monitoring coverage.</li>
+</ul>
+
+<hr>
+
+<h2>5. 💬 Support</h2>
 
 <div class="aligned-text">
-  Access FAQs:<br>
-  <a href="https://sites.google.com/view/soilbit-faqs/home" class="clickable-link" target="_blank">
-    SoilBit FAQs
-  </a>
+    Access FAQs:<br>
+    <a href="https://sites.google.com/view/soilbit-admn/home" class="clickable-link" target="_blank">
+        SoilBit Admin FAQs
+    </a>
 </div>
 
 <div class="aligned-text">
-  Contact support:<br>
-  <span class="clickable-link" id="copyEmail">smartsoilddg2025@gmail.com</span>
+    Contact support:<br>
+    <span class="clickable-link" id="copyAdminEmail">smartsoilddg2025@gmail.com</span>
 </div>
 
 <script>
-    // Copy email to clipboard
-    document.getElementById('copyEmail').addEventListener('click', function() {
-        navigator.clipboard.writeText('smartsoilddg2025@gmail.com')
-            .then(() => {
-                // Optional: You can log confirmation if you want
-                console.log('Email copied to clipboard');
-            });
+    // Copy admin email to clipboard
+    document.getElementById('copyAdminEmail').addEventListener('click', function() {
+        navigator.clipboard.writeText('smartsoilddg2025@gmail.com');
     });
 </script>
 
 </body>
 </html>
+
