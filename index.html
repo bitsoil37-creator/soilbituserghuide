@@ -12,53 +12,18 @@
         h1 {
             text-align: center;
         }
+        h2 {
+            margin-top: 1.5em;
+        }
         .clickable-link {
             color: #0066cc;
             text-decoration: underline;
             font-weight: bold;
-            cursor: pointer;
+            cursor: pointer; /* shows pointer on hover */
         }
-        .section-item {
-            margin-left: 20px; /* aligns with bullets */
-            margin-bottom: 10px;
-            position: relative;
-        }
-        /* Simple pop-up styling */
-        .email-popup {
-            display: none;
-            position: absolute;
-            top: 25px;
-            left: 0;
-            background: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 8px;
-            z-index: 100;
-            width: 160px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .email-popup button {
-            display: block;
-            width: 100%;
-            margin: 4px 0;
-            padding: 6px;
-            background-color: #0066cc;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .email-popup button:hover {
-            background-color: #004999;
-        }
-        /* Confirmation message */
-        .copy-msg {
-            display: none;
-            text-align: center;
-            font-size: 14px;
-            color: green;
-            margin-top: 5px;
+        .aligned-text {
+            margin-left: 20px; /* aligns with bullet points */
+            margin-bottom: 0.5em;
         }
     </style>
 </head>
@@ -94,60 +59,18 @@
 
 <h2>4. 💬 Support</h2>
 
-<div class="section-item">
+<div class="aligned-text">
   Access FAQs:<br>
   <a href="https://sites.google.com/view/soilbit-faqs/home" class="clickable-link" target="_blank">
     SoilBit FAQs
   </a>
 </div>
 
-<div class="section-item">
+<div class="aligned-text">
   Contact support:<br>
-  <span class="clickable-link" onclick="togglePopup(this)">
-    smartsoilddg2025@gmail.com
-  </span>
-  
-  <!-- Inline pop-up menu -->
-  <div class="email-popup">
-      <button onclick="sendEmail('smartsoilddg2025@gmail.com')">Send Email</button>
-      <button onclick="copyEmail(this, 'smartsoilddg2025@gmail.com')">Copy Email</button>
-      <div class="copy-msg">Copied!</div>
-  </div>
+  <span class="clickable-link" id="copyEmail">smartsoilddg2025@gmail.com</span>
 </div>
-
-<script>
-function togglePopup(element) {
-    const popup = element.nextElementSibling;
-    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-}
-
-function sendEmail(email) {
-    window.location.href = `mailto:${email}`;
-}
-
-function copyEmail(button, email) {
-    navigator.clipboard.writeText(email)
-        .then(() => {
-            const popup = button.parentElement;
-            const msg = popup.querySelector('.copy-msg');
-            msg.style.display = 'block';
-            setTimeout(() => { msg.style.display = 'none'; }, 1500);
-        })
-        .catch(() => {
-            // fallback: do nothing
-        });
-}
-
-// Close pop-up if clicked outside
-document.addEventListener('click', function(event) {
-    const popups = document.querySelectorAll('.email-popup');
-    popups.forEach(popup => {
-        if (!popup.contains(event.target) && !popup.previousElementSibling.contains(event.target)) {
-            popup.style.display = 'none';
-        }
-    });
-});
-</script>
 
 </body>
 </html>
+
