@@ -13,6 +13,13 @@
         h1 {
             text-align: center;
         }
+        
+        /* Style for external links to make them obvious */
+        .external-link {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -78,20 +85,31 @@
 
 <p>
   Access FAQs:
-  <a href="https://sites.google.com/view/soilbit-faqs/home" target="_blank">
+  <span class="external-link" onclick="openExternalLink('https://sites.google.com/view/soilbit-faqs/home')">
     SoilBit FAQs
-  </a>
+  </span>
 </p>
 
 <p>
   Contact support:
-  <a href="mailto:smartsoilddg2025@gmail.com">
+  <span class="external-link" onclick="openExternalLink('mailto:smartsoilddg2025@gmail.com')">
     smartsoilddg2025@gmail.com
-  </a>
+  </span>
 </p>
 
+<script>
+    // Function to handle external link clicks
+    function openExternalLink(url) {
+        // This will send a message to the WebViewer component
+        if (typeof Android !== 'undefined' && Android !== null) {
+            // For Android WebView
+            Android.openExternalLink(url);
+        } else {
+            // For testing in regular browser
+            window.open(url, '_blank');
+        }
+    }
+</script>
 
 </body>
 </html>
-
-
