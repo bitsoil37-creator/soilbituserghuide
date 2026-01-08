@@ -52,6 +52,14 @@
         .email-popup button:hover {
             background-color: #004999;
         }
+        /* Confirmation message */
+        .copy-msg {
+            display: none;
+            text-align: center;
+            font-size: 14px;
+            color: green;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -102,7 +110,8 @@
   <!-- Inline pop-up menu -->
   <div class="email-popup">
       <button onclick="sendEmail('smartsoilddg2025@gmail.com')">Send Email</button>
-      <button onclick="copyEmail('smartsoilddg2025@gmail.com')">Copy Email</button>
+      <button onclick="copyEmail(this, 'smartsoilddg2025@gmail.com')">Copy Email</button>
+      <div class="copy-msg">Copied!</div>
   </div>
 </div>
 
@@ -116,12 +125,16 @@ function sendEmail(email) {
     window.location.href = `mailto:${email}`;
 }
 
-function copyEmail(email) {
+function copyEmail(button, email) {
     navigator.clipboard.writeText(email)
         .then(() => {
-            const popup = event.target.parentElement;
-            popup.innerHTML = '<div style="padding:6px; text-align:center;">Copied!</div>';
-            setTimeout(() => popup.style.display = 'none', 1000);
+            const popup = button.parentElement;
+            const msg = popup.querySelector('.copy-msg');
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 1500);
+        })
+        .catch(() => {
+            // fallback: do nothing
         });
 }
 
