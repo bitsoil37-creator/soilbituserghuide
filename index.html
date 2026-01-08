@@ -15,7 +15,6 @@
         .clickable-link {
             color: #0066cc;
             text-decoration: underline;
-            cursor: pointer;
             font-weight: bold;
         }
     </style>
@@ -25,73 +24,48 @@
 <h1>🌱 SoilBit User Guide</h1>
 
 <h2>1. 🚀 Getting Started</h2>
-<strong>Install & Login</strong>
 <ul>
     <li>Install SoilBit on your device.</li>
     <li>Log in or register a new account.</li>
-</ul>
-<strong>Connect Your Farm</strong>
-<ul>
     <li>Scan the gateway QR code or enter the gateway ID.</li>
 </ul>
+
 <hr>
 
 <h2>2. 📊 Dashboard Overview</h2>
-<p><strong>Soil Health Map</strong> – view soil conditions per zone.</p>
 <ul>
-    <li>Tap the markers on the map to view detailed parameters.</li>
+    <li>View soil conditions per zone.</li>
+    <li>Tap map markers to see detailed parameters.</li>
+    <li>Monitor moisture, pH, temperature, salinity, and NPK.</li>
 </ul>
-<p><strong>Sensor Data</strong> – monitor moisture, pH, temperature, salinity, and NPK.</p>
-<p><strong>Alerts</strong> – get notified when soil conditions are not optimal.</p>
+
 <hr>
 
-<h2>3. 🔍 Monitoring Soil Data</h2>
+<h2>3. 📝 Reports</h2>
 <ul>
-    <li>Select a farm zone to view detailed readings.</li>
-    <li>Tap a parameter (e.g., pH, moisture) to see graphs.</li>
-    <li>Use filters to check by date or compare zones.</li>
+    <li>Generate daily and monthly summaries.</li>
+    <li>Export reports as PDF via System Log.</li>
 </ul>
+
 <hr>
 
-<h2>4. 🔔 Custom Alerts</h2>
-<ul>
-    <li>Alerts use fixed ranges based on soil health studies.</li>
-    <li>Notifications trigger when soil parameters go out of recommended ranges.</li>
-</ul>
-<hr>
+<h2>4. 💬 Support</h2>
 
-<h2>5. 📝 Reports</h2>
-<ul>
-    <li>Generate daily and monthly soil health summaries.</li>
-    <li>Export reports as PDF via the System Log button.</li>
-</ul>
-<hr>
-
-<h2>6. 💬 Support</h2>
 <p>
-  Access FAQs:
-  <span class="clickable-link" onclick="openExternalLink('https://sites.google.com/view/soilbit-faqs/home')">
-    SoilBit FAQs
-  </span>
-</p>
-<p>
-  Contact support:
-  <span class="clickable-link" onclick="openExternalLink('mailto:smartsoilddg2025@gmail.com')">
-    smartsoilddg2025@gmail.com
-  </span>
+    Access FAQs:<br>
+    <a href="https://sites.google.com/view/soilbit-faqs/home"
+       class="clickable-link">
+       SoilBit FAQs
+    </a>
 </p>
 
-<script>
-function openExternalLink(url) {
-    // For MIT App Inventor - this special URL will be caught by BeforePageLoad
-    window.location = "appinventor://external?url=" + encodeURIComponent(url);
-    
-    // Fallback for regular browsers (for testing your website)
-    setTimeout(function() {
-        window.open(url, '_blank');
-    }, 100);
-}
-</script>
+<p>
+    Contact support:<br>
+    <a href="mailto:smartsoilddg2025@gmail.com"
+       class="clickable-link">
+       smartsoilddg2025@gmail.com
+    </a>
+</p>
 
 </body>
 </html>
